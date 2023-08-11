@@ -50,3 +50,4 @@ O sistema está realizando todas as operações propostas, porém existem alguma
 * Adicionar autenticação
     * Atualmente qualquer usuário pode efetuar as chamadas na API, sem qualquer autenticação.
 * Melhorar error handling quando o body da chamada não possui os campos esperados.
+* Tirar as informações sensíveis do arquivo **application.properties** do repositório público.
