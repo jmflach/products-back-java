@@ -1,16 +1,15 @@
 package com.example.springboot.services;
 
-public class MdcServices {
+public class MdcService {
     private Float maior;
     private Float menor;
 
-    public MdcServices(Float menor, Float maior) {
+    public MdcService(Float menor, Float maior) {
         this.maior = maior;
         this.menor = menor;
     }
 
     public Float calculateMdc() {
-        Float resto = this.menor;
         Float aux;
 
         while(this.menor > 0) {

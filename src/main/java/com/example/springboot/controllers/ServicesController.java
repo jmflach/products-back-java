@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.springboot.dtos.MdcRecordDto;
-import com.example.springboot.services.MdcServices;
+import com.example.springboot.services.MdcService;
 
 import jakarta.validation.Valid;
 
@@ -17,9 +17,9 @@ public class ServicesController {
     @PostMapping("/mdc")
     public ResponseEntity<Float> calculateMdc(@RequestBody @Valid MdcRecordDto mdcRecordDto) {
 
-        MdcServices mdcServices = new MdcServices(mdcRecordDto.menor(), mdcRecordDto.maior());
+        MdcService mdcService = new MdcService(mdcRecordDto.menor(), mdcRecordDto.maior());
 
-        Float mdc = mdcServices.calculateMdc();
+        Float mdc = mdcService.calculateMdc();
 
         return ResponseEntity.status(HttpStatus.CREATED).body(mdc);
     }
