@@ -21,6 +21,15 @@ products                    | POST      | Cria um novo produto
 products/(:num)             | PUT       | Atualiza produto cujo id é (:num)
 products/(:num)             | DELETE    | Deleta produto cujo id é (:num)
 
+Como estudo, foram implementados também alguns endpoints com alguns serviços:
+
+Endpoint                    | Método    | Descrição
+--------------------------- | --------  |-------------------
+mdc                         | POST      | Calcula o máximo divisor comum entre dois números (argumentos "maior" e "menor")
+sort                        | POST      | Ordena um vetor (argumento "array")
+selectionsort               | POST      | Ordena um vetor (argumento "array") com o algoritmo selection sort
+insertionsort               | POST      | Ordena um vetor (argumento "array") com o algoritmo insertion sort
+
 ## Banco de Dados
 
 Para rodar esta aplicação, você precisará de um servidor de banco de dados instalado e rodando em sua máquina, utilizando o **Postgres**. Com a ferramenta de sua preferência, crie um banco de dados novo para esta aplicação. As configurações do banco de dados para esta aplicação são encontradas no arquivo **application.properties**, na pasta **src/main/resources** do repositório. Neste arquivo você poderá modificar o nome, usuário e senha para as informações do banco de dados que você criou.
