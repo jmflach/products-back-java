@@ -11,7 +11,7 @@ public class SortService {
     }
 
     public Integer[] sort() {
-        return this.insertionSort(this.array);
+        return this.selectionSort(this.array);
     }
 
     private ArrayList<Integer> arrayToArrayList(int array[]) {
@@ -22,6 +22,40 @@ public class SortService {
         }
 
         return newArray;
+    }
+
+    private Integer[] selectionSort(int array[]) {
+        ArrayList<Integer> original = this.arrayToArrayList(array);
+        Integer min;
+
+        for (int i = 0; i < original.size(); i++) {
+            min = this.selectMin(original, i, original.size());
+            original = this.swapElements(original, i, min);
+        }
+
+        return original.toArray(new Integer[0]);
+    }
+
+    private ArrayList<Integer> swapElements(ArrayList<Integer> array, int i, int j) {
+        Integer aux = array.get(i);
+        array.set(i, array.get(j));
+        array.set(j, aux);
+
+        return array;
+    }
+
+    private int selectMin (ArrayList<Integer> array, int start, int end) {
+        Integer min = array.get(start);
+        Integer minIndex = start;
+
+        for (int i = start; i < end; i++) {
+            if (array.get(i) < min) {
+                min = array.get(i);
+                minIndex = i;
+            }
+        }
+
+        return minIndex;
     }
 
     private Integer[] insertionSort(int array[]) {
