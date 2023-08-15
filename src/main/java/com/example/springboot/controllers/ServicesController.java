@@ -36,4 +36,24 @@ public class ServicesController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(sorted);
     }
+
+    @PostMapping("/insertionsort")
+    public ResponseEntity<Integer[]> insertionSort(@RequestBody @Valid SortRecordDto sortRecordDto) {
+
+        SortService sortService = new SortService(sortRecordDto.array());
+
+        Integer sorted[] = sortService.insertionSort();
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(sorted);
+    }
+
+    @PostMapping("/selectionsort")
+    public ResponseEntity<Integer[]> selectionSort(@RequestBody @Valid SortRecordDto sortRecordDto) {
+
+        SortService sortService = new SortService(sortRecordDto.array());
+
+        Integer sorted[] = sortService.selectionSort();
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(sorted);
+    }
 }

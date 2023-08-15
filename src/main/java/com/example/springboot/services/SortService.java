@@ -14,6 +14,14 @@ public class SortService {
         return this.selectionSort(this.array);
     }
 
+    public Integer[] insertionSort() {
+        return this.insertionSort(this.array);
+    }
+
+    public Integer[] selectionSort() {
+        return this.selectionSort(this.array);
+    }
+
     private ArrayList<Integer> arrayToArrayList(int array[]) {
         ArrayList<Integer> newArray = new ArrayList<Integer>();
 
